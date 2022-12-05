@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<h3>Galería de adoptados</h3>
-<p>Amigos que han sido adoptados.
+<h3>Galería de adoptables</h3>
+<p>
+    Aquí encontrarás a quienes podrían ser parte de tu familia. Recuerda que también puedes ser su amigo
+    virtual ¡No dejes de visitarlos a todos!
 </p>
 <div id="galeria-app">
     <div class="cargando" :class="{ 'app-hide': ready }">
         Cargando...
     </div>
     <div class="app-hide" :class="{ 'app-show': ready }">
+        <div data-template="#/animales/galerias/filtros">
+        </div>
         <div class="memorial-bordercard-container">
             <div class="card adopta-card mt-4 mb-4" v-for="card in cards"
                 :class="{'adopta-card-virtual': card.soloAmigoVirtual}">
@@ -142,54 +146,8 @@
                     </div>
                     <div data-template="#/animales/galerias/galeria-modal-datos-02"></div>
                 </div>
-                <div class="adopta-modal-adopcion mt-2 pt-2">
-                    <h4 class="text-center">
-                        Cómo ayudar a {{currentDog.nombre}}
-                    </h4>
-                    <div class="px-4 py-1" style="display: flex;" v-if="currentDog.soloAmigoVirtual">
-                        <i class="fa fa-star p-2 espinitas-secondary" aria-hidden="true"></i>
-                        <p>
-                            {{currentDog.nombre}} no está disponible para adopción física, sin embargo puedes ayudarle
-                            siendo su amigo virtual.
-                        </p>
-                        <i class="fa fa-star p-2 espinitas-secondary" aria-hidden="true"></i>
-                    </div>
-                    <div class="px-4 py-2" v-if="currentDog.soloAmigoVirtual === false">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCgL_KuKijB7UepleLYvJus_IhawXHYGSJd6oT4qR-RaOE0w/viewform"
-                            target="_blank" class="btn btn-outline-secondary btn-block text-uppercase">
-                            <span class="adopta-modal-btn-icon"><i class="small fas fa-dog"></i></span>
-                            Adopción física
-                        </a>
-                    </div>
-                    <div class="px-4 py-2">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfyWDsjKM0z_jt8pWtamcIEzKyq7YMltWVGiOHweBkqJBnsAA/viewform"
-                            target="_blank" class="btn btn-outline-secondary btn-block text-uppercase">
-                            <i class="small fas fa-desktop"></i>
-                            Amigo Virtual
-                        </a>
-                    </div>
-                    <div class="px-4 py-2">
-                        <a href="#/donaciones" class="btn btn-outline-secondary btn-block text-uppercase">
-                            Otras formas de ayudar
-                        </a>
-                    </div>
-                    <p class="pt-2 h4 text-center">
-                        Comparte a {{currentDog.nombre}}
-                    </p>
-                    <p class="text-center">
-                        ¡Si compartes en redes sociales también le das una oportunidad!
-                    </p>
-                    <div class="px-4 py-2">
-                        <a class="btn btn-outline-secondary btn-block" target="_blank"
-                            :href="currentDog.twitterLink">
-                            <i class="fab fa-twitter" aria-hidden="true"></i>
-                        </a>
-                        <button class="btn btn-outline-secondary btn-block text-uppercase" @click="compartir(currentDog)"
-                            v-if="shareButtonEnabled">
-                            <i class="fas fa-share-alt"></i> Compartir
-                        </button>
-                    </div>
-                </div>
+
+                    
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                 </div>

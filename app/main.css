@@ -740,3 +740,44 @@ h5 {
     flex-direction: column;
     height: 100%
 }
+
+.nosotros-galery {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+
+.nosotros-columns {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: stretch;
+    min-width: 180px;
+    max-width: 240px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.nosotros-video {
+    aspect-ratio: 16 / 9;
+    width: 80%;
+    height: 100%;
+    margin: 10px;
+    border-radius: 6px;
+}
+
+.nosotros-text{
+    background: linear-gradient(45deg, #a57197, #d06b77, #f0b070);
+    border-radius: 4px;
+    padding: 6px 20px;
+    color: white;
+    text-align: center;
+    width: 90%;
+}
+
+.nosotros-shape {
+    clip-path: circle(50% at 50% 50%);
+    width: 160px;
+    margin: 16px;
+}
+
