@@ -781,3 +781,7 @@ h5 {
     margin: 16px;
 }
 
+.contacto-formulario-ratio {
+    width: 100%;
+    min-height: 1000px;
+}
